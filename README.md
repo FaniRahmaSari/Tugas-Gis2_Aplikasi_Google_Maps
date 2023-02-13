@@ -1,1 +1,1 @@
-# Tugas-Gis2_Aplikasi_Google_Maps
+# UAS-GIS2 (Program Direction Google Map)
