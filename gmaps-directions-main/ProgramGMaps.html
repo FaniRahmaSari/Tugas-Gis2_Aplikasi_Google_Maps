@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <title>UAS </title>
+  <head>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>UAS GIS II</h3>
+    <h3>Fani Rahma Sari</h3>
+
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var hotelastoria = {
+          lat: -0.8890942409063571,
+          lng: 119.87997204448045,
+        };
+        var waypoint1 = { lat: -0.889038550909419, lng: 119.87993153778689 };
+        var waypoint2 = { lat: -0.8890233627282798, lng: 119.87982773938465 };
+        var waypoint3 = { lat: -0.8889170454586256, lng: 119.87972394098239 };
+        var waypoint4 = { lat: -0.8888512300044522, lng: 119.87968090262049 };
+        var waypoint5 = { lat: -0.8884487431574314, lng: 119.87769101130645 };
+        var waypoint6 = { lat: -0.8881804185652453, lng: 119.87696948583485 };
+        var waypoint7 = { lat: -0.8876792084315099, lng: 119.87473402269246 };
+        var labmaxima = { lat: -0.8878791862158082, lng: 119.87463275596421 };
+
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: hotelastoria,
+        });
+        var marker1 = new google.maps.Marker({
+          position: hotelastoria,
+          map: map
+        });
+        var marker2 = new google.maps.Marker({ position: labmaxima, map: map });
+
+        var polyline = new google.maps.Polyline({
+          path: [
+            hotelastoria,
+            waypoint1,
+            waypoint2,
+            waypoint3,
+            waypoint4,
+            waypoint5,
+            waypoint6,
+            waypoint7,
+            labmaxima,
+          ],
+          strokeColor: "Blue",
+          strokeOpacity: 5,
+          strokeWeight: 3.5,
+        });
+
+        polyline.setMap(map);
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJyN5YcWcQUQUnbnqoQc_Bkg7YzaeGDFw&callback=initMap"
+    ></script>
+  </body>
+</html>
